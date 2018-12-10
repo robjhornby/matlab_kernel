@@ -102,7 +102,7 @@ class MatlabKernel(MetaKernel):
                         self._matlab.eval(
                             "arrayfun("
                                 "@(h, i) print(h, sprintf('{}/%i', i), '-d{}', '-r{}'),"
-                                "get(0, 'children'), (1:{})')".format(
+                                "get(0, 'children'), ({}:-1:1)')".format(
                                     '/'.join(tmpdir.split(os.sep)),
                                     settings["format"],
                                     settings["resolution"],
