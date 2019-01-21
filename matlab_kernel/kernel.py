@@ -163,9 +163,10 @@ class MatlabKernel(MetaKernel):
 
         if "." in name:
             prefix, _ = name.rsplit(".", 1)
-            if self._matlab.eval("isstruct({})".format(prefix)):
-                compls = ["{}.{}".format(prefix, compl) for compl in compls]
-
+            compls = ["{}.{}".format(prefix, compl) for compl in compls]
+        
+        
+        
         return compls
 
     def do_is_complete(self, code):
